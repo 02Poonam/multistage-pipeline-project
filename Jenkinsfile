@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    echo "Building development branch: ${env.02Poonam}"
+                    echo "Building development branch: ${env.poonam}"
                     withMaven(maven: 'Maven-3.9.0') {
                         sh 'mvn clean package'
                     }

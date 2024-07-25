@@ -10,8 +10,12 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                // Add your test commands here if you have tests
+                script {
+                    echo "Building development branch: ${env.02Poonam}"
+                    withMaven(maven: 'Maven-3.9.0') {
+                        sh 'mvn clean package'
+                    }
+                }
             }
         }
     }

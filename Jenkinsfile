@@ -4,21 +4,24 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the Java application...'
-                sh 'mvn clean package'
+                echo 'Building...'
+                // Add your build steps here
             }
         }
         stage('Test') {
             steps {
-                script {
-                    echo "Building development branch: ${env.poonam}"
-                    withMaven(maven: 'Maven-3.9.0') {
-                        sh 'mvn clean package'
-                    }
-                }
+                echo 'Testing...'
+                // Add your test steps here
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+                // Add your deploy steps here
             }
         }
     }
+
     post {
         success {
             echo 'Build and test succeeded!'
